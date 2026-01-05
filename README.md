@@ -7,7 +7,7 @@ This project develops a physics-based computational engine to simulate the atmos
 
 > 🇪🇸 [Versión en Español](./README.es.md)
 
-![Simulation Demo](./assets/demo_calbuco.gif)
+![Simulation Demo](./assets/Calbuco.gif)
 *Lagrangian particle simulation visualizing the first 5 hours of the 2015 Calbuco eruption. Red particles represent the active plume front driven by wind vectors and atmospheric turbulence*
 ---
 
