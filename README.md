@@ -1,15 +1,32 @@
-# Volcanic Ash Dispersion Simulation via Stochastic Differential Equations
+# Volcanic Ash Dispersion Simulation: Stochastic Modeling Engine
 
-This project develops a physics-based computational model to simulate the atmospheric transport of volcanic ash using **Langevin Stochastic Differential Equations (SDEs)**. While the simulation uses the **2015 Calbuco Eruption (Chile)** as a validation case study, the engine is designed to be adaptable to any emission source by modifying physical parameters (wind vectors, height, and diffusion coefficients).
+**Can we predict volcanic risk using physics and Python?**
+
+This project develops a physics-based computational engine to simulate the atmospheric transport of volcanic ash using **Langevin Stochastic Differential Equations (SDEs)**. Designed as a lightweight alternative to complex meteorological models, it provides rapid risk assessment and historical reconstruction capabilities.
+
 
 > 🇪🇸 [Versión en Español](./README.es.md)
->
-## Visual Results (Case Study: Calbuco 2015)
-![Simulation Demo](./assets/demo_calbuco.gif)
-*Lagrangian particle simulation visualizing the first 5 hours of the eruption. Red particles indicate the active plume front, while yellow represents lower-density dispersion driven by stochastic turbulence.*
 
-### Validation: Model vs. Historical Data
-To verify the physical accuracy of the simulation, results were compared against the **NOAA HYSPLIT** atmospheric model for the same date (April 22, 2015).
+![Simulation Demo](./assets/demo_calbuco.gif)
+*Lagrangian particle simulation visualizing the first 5 hours of the 2015 Calbuco eruption. Red particles represent the active plume front driven by wind vectors and atmospheric turbulence*
+---
+
+## Project Workflow & Results
+
+This project is structured in two analytical stages: first, developing a probabilistic risk engine (Notebook 2), and second, validating it against a historical event (Notebook 3).
+
+### Stage 1: Probabilistic Risk Assessment
+Beyond the animation, the core value of this project is **Risk Assessment**.
+By running thousands of Monte Carlo simulations, the engine generates a **Probability Heatmap** to identify danger zones.
+
+<div align="center">
+  <img src="./assets/mapa_riesgo.png" width="70%">
+</div>
+
+* *Note: This statistical output allows authorities to make data-driven decisions under uncertainty.*
+  
+### Stage 2: Historical Validation 
+To verify the physical accuracy of the engine, I calibrated the model to replicate the **2015 Calbuco Volcano Eruption**. I compared the simulation against the **NOAA HYSPLIT** atmospheric model for the exact same date (April 22, 2015).
 
 <table>
   <tr>
@@ -22,10 +39,11 @@ To verify the physical accuracy of the simulation, results were compared against
   </tr>
   <tr>
     <td align="center"><i>Result: Northeast trajectory (NE)</i></td>
-    <td align="center"><i>Result: 15km height trajectory (Green Line)</i></td>
+    <td align="center"><i>Result: Matches 15km height trajectory</i></td>
   </tr>
 </table>
 
+---
 ## Impact & Conclusions
 The model successfully replicated the macroscopic behavior of a stratospheric eruption using limited computational resources. Key findings include:
 
@@ -37,9 +55,7 @@ The model successfully replicated the macroscopic behavior of a stratospheric er
 I moved beyond standard data analysis to implement physics simulations:
 
 * **From Deterministic to Stochastic:** Instead of simple linear movement, I implemented the **Langevin Equation** to model atmospheric turbulence as a random walk (Wiener Process).
-
-  $$d\mathbf{x} = (\mathbf{u} + \mathbf{v}_{term})dt + \sqrt{2D} d\mathbf{W}_t$$
-
+  
 * **Vectorization:** To simulate thousands of particles efficiently, I avoided Python loops and utilized `NumPy` vectorization, calculating the state of the entire system in matrix operations.
 * **Geospatial Mapping:** The mathematical output (Cartesian coordinates) was transformed into geospatial coordinates (Lat/Lon) to project the abstract physics onto a real interactive map using `Folium`.
 * **Parameter Calibration:** The model required tuning the wind vectors ($v_x, v_z$) based on historical vector analysis to match the specific Northeast trajectory of the 2015 event.
@@ -68,8 +84,8 @@ Unlike typical data analysis projects, this simulation generates its own data. Y
   
 4. **Execution:** Open the notebooks in order.
   * 01_Ecuacion_Langevin.ipynb: Theoretical foundation and 1D tests.
-  * 02_Motor_Fisico_2D.ipynb: Development of the physics engine.
-  * 03_Validacion_Calbuco.ipynb: (Main) The final geospatial simulation and validation.
+  * 02_Motor_Fisico_2D.ipynb:**(Stage 1)** Development of the physics engine.
+  * 03_Validacion_Calbuco.ipynb: **(Stage 2)** The final geospatial simulation and validation.
 
 ## Project Structure
   ```bash
@@ -87,6 +103,22 @@ Unlike typical data analysis projects, this simulation generates its own data. Y
 * `3_Validacion_Calbuco.ipynb`: Main notebook with the full simulation workflow.
 * `output/`: Contains the interactive mapa_calbuco_final.html.
 * `requirements.txt`: Required libraries for execution.
+
+## References & Data Sources
+
+To ensure the physical fidelity of the simulation, parameters and validation data were sourced from official scientific repositories:
+
+* **Satellite Imagery (Validation):**
+    * **NASA Earth Observatory:** *Eruption of Calbuco Continues*. Retrieved from [science.nasa.gov](https://science.nasa.gov/earth/earth-observatory/eruption-of-calbuco-continues-85779/).
+    * *Instrument:* MODIS on Terra Satellite.
+
+* **Trajectory Data (Validation):**
+    * **LALINET (Latin American Lidar Network):** *Calbuco Volcano Campaign 2015*. Retrieved from [lalinet.org](https://www.lalinet.org/campaigns/cabulco-volcano-2015/20150423argentinacalipso).
+    * *Data:* NOAA HYSPLIT Forward Trajectories (April 22-23).
+
+* **Physical Parameters:**
+    * **SERNAGEOMIN:** Technical Reports on Calbuco Activity (2015).
+    * **Global Volcanism Program:** Eruptive history and plume height data.
 
 ---
 *Project developed as a personal exploration in Stochastic Modeling and Geospatial Analysis.*
