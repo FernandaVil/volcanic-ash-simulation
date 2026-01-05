@@ -92,9 +92,9 @@ Unlike typical data analysis projects, this simulation generates its own data. Y
       Volcanic-Ash-Simulation/
       ├── assets/                  <-- Images and GIFs for README
       ├── output/                  <-- Generated HTML map
-      ├── 1_Ecuacion_Langevin.ipynb
-      ├── 2_Motor_Fisico_2D.ipynb
-      ├── 3_Validacion_Calbuco.ipynb
+      ├── 01_Ecuacion_Langevin.ipynb
+      ├── 02_Motor_Fisico_2D.ipynb
+      ├── 03_Validacion_Calbuco.ipynb
       ├── requirements.txt
       └── README.md
  ``` 
