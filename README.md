@@ -38,7 +38,7 @@ To verify the physical accuracy of the engine, I calibrated the model to replica
     <td align="center"><b>NOAA HYSPLIT Model (Reference)</b></td>
   </tr>
   <tr>
-    <td align="center"><img src="./assets/simulacion_zoom_out.png" width="400"></td>
+    <td align="center"><img src="./assets/Pantallazo_lejos.png" width="400"></td>
     <td align="center"><img src="./assets/recorte_noaa.png" width="400"></td>
   </tr>
   <tr>
