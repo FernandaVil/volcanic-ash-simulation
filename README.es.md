@@ -6,7 +6,7 @@ Este proyecto desarrolla un motor computacional basado en física para simular e
 
 > 🇺🇸 [English Version](./README.md)
 
-![Simulation Demo](./assets/demo_calbuco.gif)
+![Simulation Demo](./assets/final_map.gif)
 *Simulación de partículas lagrangianas visualizando las primeras 5 horas de la erupción del Calbuco en 2015. Las partículas rojas representan el frente activo de la pluma impulsado por vectores de viento y turbulencia atmosférica.*
 
 ---
