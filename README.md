@@ -7,7 +7,12 @@ This project develops a physics-based computational engine to simulate the atmos
 
 > 🇪🇸 [Versión en Español](./README.es.md)
 
-![Simulation Demo](./assets/Calbuco.gif)
+Este es el texto de arriba.
+
+![Simulation Demo](./assets/calbuco.gif)
+
+Este es el texto de abajo.
+
 *Lagrangian particle simulation visualizing the first 5 hours of the 2015 Calbuco eruption. Red particles represent the active plume front driven by wind vectors and atmospheric turbulence*
 ---
 
@@ -20,7 +25,7 @@ Beyond the animation, the core value of this project is **Risk Assessment**.
 By running thousands of Monte Carlo simulations, the engine generates a **Probability Heatmap** to identify danger zones.
 
 <div align="center">
-  <img src="./assets/mapa_riesgo.png" width="70%">
+  <img src="./assets/Calbuco.gif" width="70%">
 </div>
 
 * *Note: This statistical output allows authorities to make data-driven decisions under uncertainty.*
@@ -35,7 +40,7 @@ To verify the physical accuracy of the engine, I calibrated the model to replica
   </tr>
   <tr>
     <td align="center"><img src="./assets/simulacion_zoom_out.png" width="400"></td>
-    <td align="center"><img src="./assets/hysplit_crop.jpg" width="400"></td>
+    <td align="center"><img src="./assets/recorte_noaa.png" width="400"></td>
   </tr>
   <tr>
     <td align="center"><i>Result: Northeast trajectory (NE)</i></td>
