@@ -115,7 +115,7 @@ Para asegurar la fidelidad física de la simulación, los parámetros y datos de
     * *Instrumento:* MODIS en satélite Terra.
 
 * **Datos de trayectoria (Validación):**
-    * **LALINET (Latin American Lidar Network):** *Calbuco Volcano Campaign 2015*. Obtenido de [lalinet.org](https://www.lalinet.org/campaigns/cabulco-volcano-2015/20150423argentinacalipso).
+    * **LALINET (Latin American Lidar Network):** *Calbuco Volcano Campaign 2015*. Obtenido de [lalinet.org](https://www.lalinet.org/campaigns/cabulco-volcano-2015).
     * *Datos:* Trayectorias directas del modelo NOAA HYSPLIT (22-23 de abril).
 
 * **Parámetros físicos:**
