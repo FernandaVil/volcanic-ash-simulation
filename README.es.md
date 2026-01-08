@@ -15,19 +15,20 @@ Este proyecto desarrolla un motor computacional basado en física para simular e
 
 El motor está diseñado para operar en dos modos analíticos distintos, sirviendo a diferentes etapas de la gestión de desastres:
 
-### Modo 1: Evaluación Preventiva (Riesgo Probabilístico)
-*Enfoque: Análisis Estadístico (Notebook 2)*
+### Modo 1: Evaluación Preventiva (Riesgo probabilístico)
+*Enfoque: Análisis estadístico (Notebook 2)*
 
-Antes de aplicar el modelo a un mapa real, el motor utiliza **simulaciones de Monte Carlo** con datos de viento sintéticos para generar un **Mapa de calor de riesgo**. Al calcular la densidad de partículas por unidad de cuadrícula, identificamos zonas teóricas de acumulación.
+Antes de aplicar el modelo a un mapa real, el motor utiliza simulaciones de Monte Carlo con datos de viento sintéticos para generar un mapa de calor de riesgo. Al calcular la densidad de partículas por unidad de cuadrícula, identificamos zonas teóricas de acumulación.
 
 <div align="center">
   <img src="./assets/mapa_riesgo.png" width="70%">
   <p><i>Salida: Mapa de calor probabilístico (La "Zona Roja" indica alta probabilidad de caída de ceniza bajo incertidumbre).</i></p>
 </div>
+
 * *Nota: Este resultado estadístico permite a las autoridades tomar decisiones basadas en datos bajo incertidumbre.*
 
 ### Modo 2: Validación Histórica (Calbuco 2015)
-*Enfoque: Física y Dinámica (Notebook 3)*
+*Enfoque: Física y dinámica (Notebook 3)*
 
 Para verificar la precisión del motor, contrastamos la simulación con imágenes satelitales reales de la erupción. El modelo logró replicar la dispersión en forma de "abanico" y la dirección Noreste.
 
@@ -93,12 +94,13 @@ A diferencia de los proyectos típicos de análisis de datos, esta simulación g
   * 02_Motor_Fisico_2D.ipynb: **(Modo 1)** Desarrollo del motor físico.
 
   * 03_Validacion_Calbuco.ipynb: **(Modo 2)** Simulación geoespacial final y validación.
-## Mejoras Futuras
 
+## Mejoras Futuras
 Aunque la versión actual valida exitosamente el motor físico, futuras iteraciones podrían incluir:
 
-* Integración del pipeline: Unificar el motor de riesgo (Modo 1) con la calibración histórica (Modo 2) para generar alertas en tiempo real.
-* Análisis Demográfico: Cruzar el mapa de calor con datos de densidad poblacional para estimar civiles afectados automáticamente.
+* Integración del pipeline: Unificar el motor de riesgo (Modo 1) con la calibración histórica (Modo 2) para generar mapas de riesgo en tiempo real conectando el sistema a APIs de clima en vivo.
+* Análisis demográfico: Cruzar el mapa de calor con datos de densidad poblacional para estimar civiles afectados automáticamente.
+* Visualización 3D: Extender el mapa 2D de Folium a un modelo de terreno 3D utilizando herramientas como Cesium o Deck.gl para visualizar la compleja interacción entre la pluma de ceniza y la topografía de la cordillera de los Andes.
 
  ## Estructura del proyecto
   ```bash
