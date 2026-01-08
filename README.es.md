@@ -13,36 +13,40 @@ Este proyecto desarrolla un motor computacional basado en física para simular e
 
 ## Flujo de trabajo y resultados
 
-Este proyecto se estructura en dos etapas analíticas: primero, el desarrollo de un motor de riesgo probabilístico (Notebook 2), y segundo, su validación frente a un evento histórico (Notebook 3).
+El motor está diseñado para operar en dos modos analíticos distintos, sirviendo a diferentes etapas de la gestión de desastres:
 
-### Etapa 1: Evaluación probabilística de riesgo
-Más allá de la animación, el valor central de este proyecto es la **evaluación de riesgo**.
-Al ejecutar miles de simulaciones de Monte Carlo, el motor genera un **mapa de calor de probabilidad** para identificar zonas de peligro.
+### Modo 1: Evaluación Preventiva (Riesgo Probabilístico)
+*Enfoque: Análisis Estadístico (Notebook 2)*
+
+Antes de aplicar el modelo a un mapa real, el motor utiliza **simulaciones de Monte Carlo** con datos de viento sintéticos para generar un **Mapa de calor de riesgo**. Al calcular la densidad de partículas por unidad de cuadrícula, identificamos zonas teóricas de acumulación.
 
 <div align="center">
   <img src="./assets/mapa_riesgo.png" width="70%">
+  <p><i>Salida: Mapa de calor probabilístico (La "Zona Roja" indica alta probabilidad de caída de ceniza bajo incertidumbre).</i></p>
 </div>
-
 * *Nota: Este resultado estadístico permite a las autoridades tomar decisiones basadas en datos bajo incertidumbre.*
 
-### Etapa 2: Validación histórica
-Para verificar la precisión física del motor, calibré el modelo para replicar la **erupción del volcán Calbuco de 2015**. Comparé la simulación contra el modelo atmosférico **NOAA HYSPLIT** para la misma fecha exacta (22 de abril de 2015).
+### Modo 2: Validación Histórica (Calbuco 2015)
+*Enfoque: Física y Dinámica (Notebook 3)*
+
+Para verificar la precisión del motor, contrastamos la simulación con imágenes satelitales reales de la erupción. El modelo logró replicar la dispersión en forma de "abanico" y la dirección Noreste.
 
 <table>
   <tr>
-    <td align="center"><b>Simulación estocástica (Python)</b></td>
-    <td align="center"><b>Modelo NOAA HYSPLIT (Referencia)</b></td>
+    <td align="center"><b>Simulación Estocástica (Python)</b></td>
+    <td align="center"><b>Realidad (Satélite NASA MODIS)</b></td>
   </tr>
   <tr>
-    <td align="center"><img src="./assets/Pantallazo_lejos.png" width="400"></td>
-    <td align="center"><img src="./assets/recorte_noaa.png" width="400"></td>
+    <td align="center"><img src="./assets/pantallazo_con_zoom.png" width="400"></td>
+    <td align="center"><img src="./assets/satelital_nasa.jpg" width="400"></td>
   </tr>
   <tr>
-    <td align="center"><i>Resultado: Trayectoria noreste (NE)</i></td>
-    <td align="center"><i>Resultado: Coincide con trayectoria a 15 km</i></td>
+    <td align="center"><i>Predicción: Dispersión NE y ensanchamiento</i></td>
+    <td align="center"><i>Observación: Pluma real sobre Argentina</i></td>
   </tr>
 </table>
 
+> **Nota técnica:** La trayectoria también fue validada contra los modelos de trayectoria NOAA HYSPLIT, obteniendo una coincidencia en los tiempos de arribo a zonas urbanas (Ver *Notebook 3* para el análisis detallado).
 ---
 
 ## Impacto y conclusiones
@@ -86,9 +90,15 @@ A diferencia de los proyectos típicos de análisis de datos, esta simulación g
 4. **Ejecución:** Abrir los notebooks en orden.
   * 01_Ecuacion_Langevin.ipynb: Fundamentos teóricos y pruebas en 1D.
 
-  * 02_Motor_Fisico_2D.ipynb: **(Etapa 1)** Desarrollo del motor físico.
+  * 02_Motor_Fisico_2D.ipynb: **(Modo 1)** Desarrollo del motor físico.
 
-  * 03_Validacion_Calbuco.ipynb: **(Etapa 2)** Simulación geoespacial final y validación.
+  * 03_Validacion_Calbuco.ipynb: **(Modo 2)** Simulación geoespacial final y validación.
+## Mejoras Futuras
+
+Aunque la versión actual valida exitosamente el motor físico, futuras iteraciones podrían incluir:
+
+* Integración del pipeline: Unificar el motor de riesgo (Modo 1) con la calibración histórica (Modo 2) para generar alertas en tiempo real.
+* Análisis Demográfico: Cruzar el mapa de calor con datos de densidad poblacional para estimar civiles afectados automáticamente.
 
  ## Estructura del proyecto
   ```bash
