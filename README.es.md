@@ -58,7 +58,7 @@ Fui más allá del análisis de datos estándar para implementar simulaciones f�
 * **De determinista a estocástico:** En lugar de un movimiento lineal simple, implementé la **ecuación de Langevin** para modelar la turbulencia atmosférica como una caminata aleatoria (Proceso de Wiener).
 * **Vectorización:** Para simular miles de partículas eficientemente, evité los bucles de Python y utilicé la vectorización de `NumPy`, calculando el estado de todo el sistema en operaciones matriciales.
 * **Mapeo geoespacial:** La salida matemática (coordenadas cartesianas) fue transformada en coordenadas geoespaciales (Lat/Lon) para proyectar la física abstracta en un mapa interactivo real usando `Folium`.
-* **Calibración de parámetros:** El modelo requirió ajustar los vectores de viento ($v_x, v_z$) basándose en análisis vectoriales históricos para coincidir con la trayectoria noreste específica del evento de 2015.
+* **Calibración de parámetros:** Las constantes físicas (altura de la columna >15km y trayectoria NE) fueron calibradas usando reportes oficiales del Smithsonian Institution (GVP, 2015), asegurando que la simulación refleja las ocndiciones atmosféricas reales del evento del 2015.
 
 ## Cómo ejecutar este proyecto localmente
 
