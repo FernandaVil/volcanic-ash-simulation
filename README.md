@@ -17,35 +17,40 @@ This project develops a physics-based computational engine to simulate the atmos
 
 ## Project Workflow & Results
 
-This project is structured in two analytical stages: first, developing a probabilistic risk engine (Notebook 2), and second, validating it against a historical event (Notebook 3).
+The engine is designed to operate in two distinct analytical modes, serving different stages of disaster management:
 
-### Stage 1: Probabilistic Risk Assessment
-Beyond the animation, the core value of this project is **Risk Assessment**.
-By running thousands of Monte Carlo simulations, the engine generates a **Probability Heatmap** to identify danger zones.
+### Mode 1: Probabilistic Risk Assessment (Prevention)
+*Focus: Statistical Analysis (Notebook 2)*
+
+Before applying the model to a specific historical event, the engine uses **Monte Carlo simulations** with synthetic wind data to generate a **Risk Heatmap**. By calculating the particle density per grid unit, we identify theoretical accumulation zones and high-risk areas.
 
 <div align="center">
-  <img src="./assets/Calbuco.gif" width="70%">
+  <img src="./assets/mapa_riesgo.png" width="70%">
+  <p><i>Output: Probabilistic Heatmap (The "Red Zone" indicates high ash fall probability under uncertainty).</i></p>
 </div>
 
 * *Note: This statistical output allows authorities to make data-driven decisions under uncertainty.*
-  
-### Stage 2: Historical Validation 
-To verify the physical accuracy of the engine, I calibrated the model to replicate the **2015 Calbuco Volcano Eruption**. I compared the simulation against the **NOAA HYSPLIT** atmospheric model for the exact same date (April 22, 2015).
+### Mode 2: Historical Validation (Calbuco 2015)
+*Focus: Physics & Dynamics (Notebook 3)*
+
+To verify the engine's physical accuracy, I calibrated the model to replicate the **2015 Calbuco Volcano eruption**. We contrasted the simulation against real satellite imagery to validate dispersion patterns.
 
 <table>
   <tr>
     <td align="center"><b>Stochastic Simulation (Python)</b></td>
-    <td align="center"><b>NOAA HYSPLIT Model (Reference)</b></td>
+    <td align="center"><b>Reality (NASA MODIS Satellite)</b></td>
   </tr>
   <tr>
-    <td align="center"><img src="./assets/Pantallazo_lejos.png" width="400"></td>
-    <td align="center"><img src="./assets/recorte_noaa.png" width="400"></td>
+    <td align="center"><img src="./assets/pantallazo_con_zoom.png" width="400"></td>
+    <td align="center"><img src="./assets/satelital_nasa.jpg" width="400"></td>
   </tr>
   <tr>
-    <td align="center"><i>Result: Northeast trajectory (NE)</i></td>
-    <td align="center"><i>Result: Matches 15km height trajectory</i></td>
+    <td align="center"><i>Prediction: NE dispersion & fan-shaped spread</i></td>
+    <td align="center"><i>Observation: Real plume drifting over Argentina</i></td>
   </tr>
 </table>
+
+> **Technical Note:** The trajectory was also validated against **NOAA HYSPLIT** trajectory models, confirming arrival time matches for urban areas (See *Notebook 3* for the detailed technical comparison).
 
 ---
 ## Impact & Conclusions
@@ -88,8 +93,15 @@ Unlike typical data analysis projects, this simulation generates its own data. Y
   
 4. **Execution:** Open the notebooks in order.
   * 01_Ecuacion_Langevin.ipynb: Theoretical foundation and 1D tests.
-  * 02_Motor_Fisico_2D.ipynb:**(Stage 1)** Development of the physics engine.
-  * 03_Validacion_Calbuco.ipynb: **(Stage 2)** The final geospatial simulation and validation.
+  * 02_Motor_Fisico_2D.ipynb:**(Mode 1)** Development of the physics engine and risk heatmap.
+  * 03_Validacion_Calbuco.ipynb: **(Mode 2)** The final geospatial simulation and validation.
+## Future Improvements & Roadmap
+
+While the current version successfully validates the physics engine against historical data, future iterations of this project could include:
+
+* **Pipeline Integration:** Unifying the Risk Engine (Mode 1) with the Historical Calibration (Mode 2) to generate real-time risk maps for active volcanoes based on live weather API data.
+* **Demographic Impact Analysis:** Overlaying the probability heatmap with population density data (using Python libraries like `geopandas`) to automatically estimate the number of affected civilians.
+* **3D Visualization:** Extending the 2D Folium map to a 3D terrain model using **Cesium** or **Deck.gl** to visualize the complex interaction between the ash plume and the Andes mountain range.
 
 ## Project Structure
   ```bash
