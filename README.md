@@ -62,7 +62,7 @@ I moved beyond standard data analysis to implement physics simulations:
   
 * **Vectorization:** To simulate thousands of particles efficiently, I avoided Python loops and utilized `NumPy` vectorization, calculating the state of the entire system in matrix operations.
 * **Geospatial Mapping:** The mathematical output (Cartesian coordinates) was transformed into geospatial coordinates (Lat/Lon) to project the abstract physics onto a real interactive map using `Folium`.
-* **Parameter Calibration:** The model required tuning the wind vectors ($v_x, v_z$) based on historical vector analysis to match the specific Northeast trajectory of the 2015 event.
+* **Parameter Calibration:** Physical constants (column height >15km and NE trajectory) were calibrated using official eruptive chronologies from the Smithsonian Institution (GVP, 2015), ensuring the simulation reflects the real atmospheric conditions of the 2015 event.
 
 ## How to Run This Project Locally
 
@@ -121,8 +121,6 @@ To ensure the physical fidelity of the simulation, parameters and validation dat
     * *Data:* NOAA HYSPLIT Forward Trajectories (April 22-23).
 
 * **Physical Parameters:**
-    * **SERNAGEOMIN:** Technical Reports on Calbuco Activity (2015).
-    * **Global Volcanism Program:** Eruptive history and plume height data.
-
+  * **Global Volcanism Program, 2015:** *Report on Calbuco (Chile)* (Venzke, E., ed.). Bulletin of the Global Volcanism Network, 40:6. Smithsonian Institution. [https://doi.org/10.5479/si.GVP.BGVN201506-358020](https://doi.org/10.5479/si.GVP.BGVN201506-358020)
 ---
 *Project developed as a personal exploration in Stochastic Modeling and Geospatial Analysis.*
