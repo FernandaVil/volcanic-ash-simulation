@@ -21,8 +21,8 @@ El motor está diseñado para operar en dos modos analíticos distintos, sirvien
 Antes de aplicar el modelo a un mapa real, el motor utiliza simulaciones de Monte Carlo con datos de viento sintéticos para generar un mapa de calor de riesgo. Al calcular la densidad de partículas por unidad de cuadrícula, identificamos zonas teóricas de acumulación.
 
 <div align="center">
-  <img src="./assets/mapa_riesgo.png" width="70%">
-  <p><i>Salida: Mapa de calor probabilístico (La "Zona Roja" indica alta probabilidad de caída de ceniza bajo incertidumbre).</i></p>
+  <img src="./assets/mapa_riesgo_final.png" width="70%">
+  <p><i> Mapa de Riesgo (Escenario de control). Resultado de una simulación de Monte Carlo con 50,000 partículas.</i></p>
 </div>
 
 * *Nota: Este resultado estadístico permite a las autoridades tomar decisiones basadas en datos bajo incertidumbre.*
