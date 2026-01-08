@@ -119,7 +119,6 @@ Para asegurar la fidelidad física de la simulación, los parámetros y datos de
     * *Datos:* Trayectorias directas del modelo NOAA HYSPLIT (22-23 de abril).
 
 * **Parámetros físicos:**
-    * **SERNAGEOMIN:** Reportes técnicos de actividad volcánica (2015).
-    * **Global Volcanism Program:** Historia eruptiva y datos de altura de pluma.
+    * **Global Volcanism Program, 2015**:  *Report on Calbuco (Chile)* (Venzke, E., ed.). Bulletin of the Global Volcanism Network, 40:6. Smithsonian Institution. [https://doi.org/10.5479/si.GVP.BGVN201506-358020](https://doi.org/10.5479/si.GVP.BGVN201506-358020)
 ---
 *Proyecto desarrollado como una exploración personal en modelado estocástico y análisis geoespacial.*
