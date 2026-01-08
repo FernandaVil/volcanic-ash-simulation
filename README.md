@@ -25,7 +25,7 @@ The engine is designed to operate in two distinct analytical modes, serving diff
 Before applying the model to a specific historical event, the engine uses **Monte Carlo simulations** with synthetic wind data to generate a **Risk Heatmap**. By calculating the particle density per grid unit, we identify theoretical accumulation zones and high-risk areas.
 
 <div align="center">
-  <img src="./assets/mapa_riesgo.png" width="70%">
+  <img src="./assets/mapa_riesgo_final.png" width="70%">
   <p><i>Output: Probabilistic Heatmap (The "Red Zone" indicates high ash fall probability under uncertainty).</i></p>
 </div>
 
