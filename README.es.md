@@ -34,8 +34,8 @@ Para verificar la precisión física del motor, calibré el modelo para replicar
     <td align="center"><b>Modelo NOAA HYSPLIT (Referencia)</b></td>
   </tr>
   <tr>
-    <td align="center"><img src="./assets/simulacion_zoom_out.png" width="400"></td>
-    <td align="center"><img src="./assets/hysplit_crop.jpg" width="400"></td>
+    <td align="center"><img src="./assets/Pantallazo_lejos.png" width="400"></td>
+    <td align="center"><img src="./assets/recorte_noaa.png" width="400"></td>
   </tr>
   <tr>
     <td align="center"><i>Resultado: Trayectoria noreste (NE)</i></td>
