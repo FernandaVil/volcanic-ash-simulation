@@ -26,7 +26,7 @@ Before applying the model to a specific historical event, the engine uses **Mont
 
 <div align="center">
   <img src="./assets/mapa_riesgo_final.png" width="70%">
-  <p><i>Output: Probabilistic Heatmap (The "Red Zone" indicates high ash fall probability under uncertainty).</i></p>
+  <p><i> Risk Zonation Map (Theoretical Control Scenario). Cumulative ash load visualization generated via Monte Carlo simulation (50,000 particles).</i></p>
 </div>
 
 * *Note: This statistical output allows authorities to make data-driven decisions under uncertainty.*
