@@ -33,7 +33,7 @@ Before applying the model to a specific historical event, the engine uses **Mont
 ### Mode 2: Historical Validation (Calbuco 2015)
 *Focus: Physics & Dynamics (Notebook 3)*
 
-To verify the engine's physical accuracy, I calibrated the model to replicate the **2015 Calbuco Volcano eruption**. We contrasted the simulation against real satellite imagery to validate dispersion patterns.
+To verify the engine's physical accuracy, I calibrated the model to replicate the **2015 Calbuco Volcano eruption**. I contrasted the simulation against real satellite imagery to validate dispersion patterns.
 
 <table>
   <tr>
